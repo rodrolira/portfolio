@@ -1,6 +1,7 @@
 // src/components/sections/About.tsx
 import { SectionTitle } from '@/components/ui/SectionTitle'
 import { GlassPanel } from '@/components/ui/GlassPanel'
+import { FadeInView } from '@/components/ui/FadeInView'
 
 export const About = () => {
     return (
@@ -8,13 +9,31 @@ export const About = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
                 <SectionTitle
                     title="Sobre mí"
-                    subtitle="Una breve historia de mi camino en el desarrollo"
+                    subtitle="La persona detrás del código"
                 />
-                <GlassPanel>
-                    <p className="text-gray-300 leading-relaxed">
-                        Aquí irá mi presentación profesional...
-                    </p>
-                </GlassPanel>
+                <FadeInView>
+                    <GlassPanel>
+                        <div className="text-gray-300 space-y-6 leading-relaxed">
+                            <p>
+                                Soy un desarrollador Full Stack apasionado por construir aplicaciones web
+                                que no solo funcionen bien, sino que estén bien diseñadas. Comencé en el
+                                mundo del desarrollo durante la universidad y desde entonces no he parado
+                                de aprender.
+                            </p>
+                            <p>
+                                Mi enfoque principal está en el ecosistema React y Spring Boot, pero
+                                siempre estoy explorando nuevas herramientas. Creo firmemente en las
+                                buenas prácticas: Clean Code, pruebas automatizadas y despliegue continuo.
+                            </p>
+                            <p>
+                                Actualmente busco oportunidades donde pueda seguir creciendo como
+                                profesional y contribuir a proyectos que marquen la diferencia.
+                            </p>
+                        </div>
+
+                    </GlassPanel>
+                </FadeInView>
+
             </div>
         </section>
     )

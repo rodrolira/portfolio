@@ -12,7 +12,7 @@ export const SectionTitle = ({ title, subtitle }: SectionTitleProps) => {
             </h2>
             <div className="w-24 h-1 bg-accent-cyan mx-auto rounded-full" />
             {subtitle && (
-                <p className="mt-6 text-gray-400 max-w-2xl mx-auto text-lg">
+                <p className="mt-6! text-gray-400 mx-auto text-lg">
                     {subtitle}
                 </p>
             )}
