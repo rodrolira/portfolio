@@ -1,3 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0A192F;
+  --color-primary-light: #112240;
+  --color-accent-blue: #1E90FF;
+  --color-accent-cyan: #00FFFF;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'Fira Code', monospace;
+  --backdrop-blur-xs: 2px;
+}
+
 :root {
   --text: #6b6375;
   --text-h: #08060d;
@@ -62,8 +74,15 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
+  background-color: var(--color-primary);
+  color: white;
+  font-family: var(--font-sans);
 }
 
 h1,
@@ -77,20 +96,24 @@ h1 {
   font-size: 56px;
   letter-spacing: -1.68px;
   margin: 32px 0;
+
   @media (max-width: 1024px) {
     font-size: 36px;
     margin: 20px 0;
   }
 }
+
 h2 {
   font-size: 24px;
   line-height: 118%;
   letter-spacing: -0.24px;
   margin: 0 0 8px;
+
   @media (max-width: 1024px) {
     font-size: 20px;
   }
 }
+
 p {
   margin: 0;
 }

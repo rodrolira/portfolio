@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+/* ===== Tema personalizado ===== */
+@theme {
+    /* Colores principales */
+    --color-primary: #0A192F;
+    --color-primary-light: #112240;
+    --color-accent-blue: #1E90FF;
+    --color-accent-cyan: #00FFFF;
+
+    /* Fuentes */
+    --font-sans: 'Inter', system-ui, sans-serif;
+    --font-mono: 'Fira Code', monospace;
+
+    /* Extensión personalizada: backdrop-blur-xs */
+    --backdrop-blur-xs: 2px;
+}
+
+/* ===== Estilos base globales ===== */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--color-primary);
+    color: var(--color-gray-100);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+    background-color: color-mix(in srgb, var(--color-accent-blue) 30%, transparent);
+    color: white;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-accent-blue);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent-cyan);
+}
