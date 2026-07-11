@@ -1,8 +1,12 @@
 import { SectionTitle } from '@/components/ui/SectionTitle'
 import { GlassPanel } from '@/components/ui/GlassPanel'
 import { FadeInView } from '@/components/ui/FadeInView'
+import { useEmailForm } from '@/hooks/useEmailForm'
+import { Button } from '../ui/Button'
 
 export const Contact = () => {
+    const { formRef, sendEmail, loading, success, error } = useEmailForm()
+
     return (
         <section id="contact" className="py-20 bg-primary-light">
             <div className="max-w-2xl mx-auto px-4 sm:px-6">
@@ -10,62 +14,53 @@ export const Contact = () => {
                     title="Contacto"
                     subtitle="¿Tienes un proyecto en mente? Hablemos"
                 />
-                <FadeInView>
-                <GlassPanel>
-                    <form className="space-y-5">
-                        <div>
-                            <label htmlFor="name" className="block text-sm text-gray-300 mb-1">
-                                Nombre
-                            </label>
-                            <input
-                                type="text"
-                                id="name"
-                                className="w-full bg-primary/50 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-gray-500 focus:outline-none focus:border-accent-cyan transition-colors"
-                                placeholder="Tu nombre"
-                            />
-                        </div>
-                        <div>
-                            <label htmlFor="email" className="block text-sm text-gray-300 mb-1">
-                                Email
-                            </label>
-                            <input
-                                type="email"
-                                id="email"
-                                className="w-full bg-primary/50 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-gray-500 focus:outline-none focus:border-accent-cyan transition-colors"
-                                placeholder="tu@email.com"
-                            />
-                        </div>
-                        <div>
-                            <label htmlFor="message" className="block text-sm text-gray-300 mb-1">
-                                Mensaje
-                            </label>
-                            <textarea
-                                id="message"
-                                rows={4}
-                                className="w-full bg-primary/50 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-gray-500 focus:outline-none focus:border-accent-cyan transition-colors resize-none"
-                                placeholder="Cuéntame sobre tu proyecto..."
-                            />
-                        </div>
-                        <button
-                            type="submit"
-                            className="w-full bg-accent-blue hover:bg-blue-600 text-white font-semibold py-3 rounded-lg transition-colors"
-                        >
-                            Enviar mensaje
-                        </button>
-                    </form>
-                    <div className="mt-6 flex justify-center gap-6 text-gray-400 text-sm">
-                        <a href="mailto:tuemail@example.com" className="hover:text-accent-cyan transition-colors">
-                            Email
-                        </a>
-                        <a href="https://linkedin.com/in/tuusuario" target="_blank" rel="noopener noreferrer" className="hover:text-accent-cyan transition-colors">
-                            LinkedIn
-                        </a>
-                        <a href="https://github.com/tuusuario" target="_blank" rel="noopener noreferrer" className="hover:text-accent-cyan transition-colors">
-                            GitHub
-                        </a>
+                <form ref={formRef} onSubmit={sendEmail} className="space-y-6">
+                    <div>
+                        <label htmlFor="from_name" className="block text-sm text-gray-300 mb-1">Nombre</label>
+                        <input
+                            type="text"
+                            name="from_name"
+                            id="from_name"
+                            required
+                            className="w-full bg-primary border border-white/10 rounded-lg px-4 py-3 text-white focus:border-accent-cyan outline-none"
+                        />
                     </div>
+                    <div>
+                        <label htmlFor="reply_to" className="block text-sm text-gray-300 mb-1">Email</label>
+                        <input
+                            type="email"
+                            name="reply_to"
+                            id="reply_to"
+                            required
+                            className="w-full bg-primary border border-white/10 rounded-lg px-4 py-3 text-white focus:border-accent-cyan outline-none"
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="message" className="block text-sm text-gray-300 mb-1">Mensaje</label>
+                        <textarea
+                            name="message"
+                            id="message"
+                            rows={5}
+                            required
+                            className="w-full bg-primary border border-white/10 rounded-lg px-4 py-3 text-white focus:border-accent-cyan outline-none resize-y"
+                        />
+                    </div>
+
+                    <Button type="submit" disabled={loading} className="w-full">
+                        {loading ? 'Enviando...' : 'Enviar mensaje'}
+                    </Button>
+
+                    {success && <p className="text-green-400 text-sm">¡Mensaje enviado correctamente!</p>}
+                    {error && <p className="text-red-400 text-sm">{error}</p>}
+                </form>
+
+                <FadeInView>
+                    <GlassPanel>
+                        <h3 className="text-xl font-semibold text-white mb-2">O contáctame directamente:</h3>
+                        <p className="text-gray-400 my-4!">Correo: <a href="mailto:rlirapizarro@gmail.com" className="text-accent-cyan hover:underline">rlirapizarro@gmail.com</a></p>
+
                     </GlassPanel>
-                    </FadeInView>
+                </FadeInView>
             </div>
         </section>
     )

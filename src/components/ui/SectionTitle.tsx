@@ -2,11 +2,14 @@
 interface SectionTitleProps {
     title: string
     subtitle?: string
+    className?: string
+    children?: React.ReactNode
 }
 
-export const SectionTitle = ({ title, subtitle }: SectionTitleProps) => {
+export const SectionTitle = ({ title, subtitle, className, children }: SectionTitleProps) => {
     return (
-        <div className="text-center mb-16">
+        <div className={`text-center mb-16 ${className || ''}`}>
+
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                 {title}
             </h2>
@@ -16,6 +19,7 @@ export const SectionTitle = ({ title, subtitle }: SectionTitleProps) => {
                     {subtitle}
                 </p>
             )}
+            {children}
         </div>
     )
 }

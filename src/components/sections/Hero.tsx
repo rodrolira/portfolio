@@ -1,8 +1,10 @@
+import { lazy, Suspense } from 'react'
 import { SectionTitle } from '@/components/ui/SectionTitle'
 import { useScrollTo } from '@/hooks/useScrollTo'
 import { Badge } from '@/components/ui/Badge'
-import { Scene3D } from './Scene3D'
 import { FadeInView } from '@/components/ui/FadeInView'
+
+const Scene3D = lazy(() => import('./Scene3D').then(mod => ({ default: mod.Scene3D })))
 
 export const Hero = () => {
     const scrollTo = useScrollTo()
@@ -11,7 +13,10 @@ export const Hero = () => {
         <section id="hero" className="min-h-screen flex items-center justify-center bg-primary relative overflow-hidden">
             {/* Fondo 3D */}
             <div className="absolute inset-0 z-0">
-                <Scene3D />
+                <Suspense fallback={<div className="w-full h-full bg-primary" />}>
+                    <Scene3D />
+                </Suspense>
+
             </div>
             {/* Contenido textual, con z-10 para estar sobre el canvas */}
             <div className="relative z-10 text-center px-4 max-w-4xl">

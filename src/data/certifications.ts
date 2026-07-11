@@ -2,7 +2,7 @@ import type { Certification } from '@/types'
 
 export const certifications: Certification[] = [
   {
-    title: 'React - The Complete Guide (incl Hooks, React Router, Redux)',
+    title: 'JavaScript, HTML, CSS y Node.js',
     issuer: 'Udemy',
     date: '2022-08',
     url: 'https://udemy.com/certificate/...',

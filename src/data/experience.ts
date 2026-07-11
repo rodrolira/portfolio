@@ -2,48 +2,20 @@ import type { Experience } from '@/types'
 
 export const experiences: Experience[] = [
   {
-    id: 'exp1',
-    company: 'Tech Solutions Inc.',
-    role: 'Desarrollador Full Stack Junior',
-    startDate: '2023-02',
-    endDate: '2024-01',
+    id: 'atkl-records',
+    company: 'ATKL Records',
+    role: 'Desarrollador Full Stack',
+    startDate: '2023-01',
+    endDate: '2023-12',
     description:
-      'Participé en el desarrollo de una plataforma interna de gestión de inventarios usando React y Spring Boot.',
+      "Desarrollé una aplicación web para la gestión y promoción de un sello de techno. La plataforma incluye un catálogo de lanzamientos, un sistema de maquetas (demos) para artistas, reproducción de audio y un panel administrativo.",
     type: 'work',
     highlights: [
-      'Optimización de consultas SQL reduciendo tiempos de respuesta en un 40%',
-      'Implementación de CI/CD con GitHub Actions y Docker',
-      'Colaboración en un equipo ágil con Scrum',
-    ],
-  },
-  {
-    id: 'exp2',
-    company: 'Freelance',
-    role: 'Desarrollador Web Freelance',
-    startDate: '2022-06',
-    endDate: '2023-01',
-    description:
-      'Creación de sitios web estáticos y dinámicos para pequeños negocios locales.',
-    type: 'freelance',
-    highlights: [
-      'Diseño y desarrollo de 3 sitios web con React y TailwindCSS',
-      'Optimización SEO logrando primeras posiciones en búsquedas locales',
-      'Manejo de hosting, dominios y configuración de DNS',
-    ],
-  },
-  {
-    id: 'exp3',
-    company: 'Universidad XYZ',
-    role: 'Practicante de Desarrollo',
-    startDate: '2021-06',
-    endDate: '2021-12',
-    description:
-      'Prácticas profesionales en el laboratorio de software, desarrollando una aplicación de encuestas.',
-    type: 'internship',
-    highlights: [
-      'Primer contacto con metodologías ágiles',
-      'Aprendizaje de Git y trabajo colaborativo',
-      'Desarrollo de API REST con Node.js y Express',
+      'Diseñé y desarrollé una arquitectura limpia y modular para la aplicación full-stack.',
+      'Implementé funcionalidades clave como catálogo de lanzamientos y sistema de maquetas.',
+
+      'Optimicé consultas SQL y diseñé una base de datos relacional eficiente.',
+      'Integré tecnologías modernas para mejorar la experiencia del usuario y el rendimiento de la aplicación.',
     ],
   },
 ]

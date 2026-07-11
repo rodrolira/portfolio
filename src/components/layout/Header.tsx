@@ -29,7 +29,7 @@ export const Header = () => {
                 onClick={() => scrollTo('hero')}
                 className="text-2xl font-bold text-accent-cyan tracking-tight hover:text-white transition-colors"
             >
-                MiNombre
+                RODRIGO LIRA PIZARRO
             </button>
 
             {/* Enlaces de navegación (desktop) */}

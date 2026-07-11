@@ -1,5 +1,6 @@
 import type { Project } from '@/types'
 import { Badge } from './Badge'
+import { Link } from 'react-router-dom'
 
 interface ProjectCardProps {
   project: Project
@@ -26,7 +27,11 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
 
       {/* Cuerpo de la tarjeta */}
       <div className="p-6">
-        <h3 className="text-xl font-semibold text-white mb-2">{project.title}</h3>
+        <h3 className="text-xl font-semibold text-white mb-2">
+          <Link to={`/project/${project.id}`} className="hover:text-accent-cyan transition-colors">
+            {project.title}
+          </Link>
+        </h3>
         <p className="text-gray-400 text-sm mb-4">{project.description}</p>
 
         {/* Badges de tecnologías */}

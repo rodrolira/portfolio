@@ -1,7 +1,18 @@
-import { useRef, useMemo } from 'react'
+import { useRef } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { Stars } from '@react-three/drei'
 import * as THREE from 'three'
+
+const PARTICLES_COUNT = 300
+const particlePositions = (() => {
+  const positions = new Float32Array(PARTICLES_COUNT * 3)
+  for (let i = 0; i < PARTICLES_COUNT * 3; i += 3) {
+    positions[i] = (Math.random() - 0.5) * 10
+    positions[i + 1] = (Math.random() - 0.5) * 6
+    positions[i + 2] = (Math.random() - 0.5) * 8
+  }
+  return positions
+})()
 
 /**
  * Geometría central sutil (wireframe)
@@ -18,7 +29,7 @@ const FloatingGeometry = () => {
   })
 
   // Geometría de icosaedro con detalle bajo para pocos polígonos
-  const geometry = useMemo(() => new THREE.IcosahedronGeometry(1.5, 1), [])
+  const geometry = new THREE.IcosahedronGeometry(1.5, 1)
 
   return (
     <mesh ref={meshRef} geometry={geometry}>
@@ -33,17 +44,8 @@ const FloatingGeometry = () => {
 const ParticleField = () => {
   const pointsRef = useRef<THREE.Points>(null!)
 
-  // Generamos posiciones aleatorias una sola vez
-  const particlesCount = 300
-  const positions = useMemo(() => {
-    const pos = new Float32Array(particlesCount * 3)
-    for (let i = 0; i < particlesCount * 3; i += 3) {
-      pos[i] = (Math.random() - 0.5) * 10     // x
-      pos[i + 1] = (Math.random() - 0.5) * 6  // y
-      pos[i + 2] = (Math.random() - 0.5) * 8  // z
-    }
-    return pos
-  }, [])
+  const particlesCount = PARTICLES_COUNT
+  const positions = particlePositions
 
   useFrame((_, delta) => {
     if (pointsRef.current) {
@@ -59,6 +61,7 @@ const ParticleField = () => {
           array={positions}
           count={particlesCount}
           itemSize={3}
+          args={[positions, 3]}
         />
       </bufferGeometry>
       <pointsMaterial
