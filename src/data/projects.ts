@@ -51,7 +51,7 @@ export const projects: Project[] = [
       'Simulación de vida artificial con un sistema ECS (Entity-Component-System) en Python y visualización en tiempo real con React + PixiJS en estilo pixel art.',
     longDescription:
       'Los NPCs tienen necesidades, personalidad, emociones, memoria, relaciones, trabajo y economía, y el mundo reacciona a eventos emergentes (epidemias, crisis económicas, migraciones, clima, innovación). El mundo se expande con la población: empieza como un pequeño asentamiento rodeado de niebla y crece con nuevos edificios en la frontera.',
-    image: '',
+    image: '/projects/simulacion-vida.png',
     technologies: ['Python', 'FastAPI', 'WebSocket', 'React', 'PixiJS'],
     problemSolved:
       'Modelar comportamiento emergente de una sociedad artificial y visualizarlo en tiempo real de forma comprensible.',
@@ -72,7 +72,7 @@ export const projects: Project[] = [
       'Juego móvil hyper-casual de un solo toque: apilá bloques, el sobrante se "smashea" y no dejes que el ancho llegue a cero. Hecho con Phaser 3 + Capacitor + TypeScript.',
     longDescription:
       'Juego de un toque apuntado a Android e iOS y a un público infantil/juvenil. Construido con Phaser 3 para la lógica de juego y Capacitor para empaquetarlo como app nativa. Estado actual: scaffold jugable, con anuncios e IAP como placeholders mockeados en navegador.',
-    image: '',
+    image: '/projects/stack-smash.png',
     technologies: ['Phaser 3', 'Capacitor', 'TypeScript', 'Vite'],
     problemSolved:
       'Crear un juego móvil ligero y adictivo, empaquetable para tiendas de apps desde una única base de código web.',
