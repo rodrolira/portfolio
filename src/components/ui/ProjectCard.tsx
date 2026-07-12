@@ -8,7 +8,7 @@ interface ProjectCardProps {
 
 export const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
-    <div className="bg-primary-light/30 border border-white/10 rounded-2xl overflow-hidden hover:border-accent-cyan/50 transition-all duration-300 hover:shadow-lg hover:shadow-accent-cyan/5 group">
+    <div className="gradient-border bg-primary-light/30 border border-white/10 rounded-2xl overflow-hidden hover:border-transparent transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-accent-cyan/10 group">
       {/* Imagen de preview */}
       <div className="aspect-video bg-gray-800 relative overflow-hidden">
         {project.image ? (
@@ -19,10 +19,12 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
             loading="lazy"
           />
         ) : (
-          <div className="w-full h-full flex items-center justify-center text-gray-500">
+          <div className="w-full h-full flex items-center justify-center text-gray-500 bg-gradient-to-br from-primary-light to-primary">
             Sin imagen
           </div>
         )}
+        {/* Degradado inferior para fundir imagen con la tarjeta */}
+        <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-primary-light/80 to-transparent" />
       </div>
 
       {/* Cuerpo de la tarjeta */}

@@ -21,8 +21,9 @@ export const About = () => {
                                 de aprender.
                             </p>
                             <p>
-                                Mi enfoque principal está en el ecosistema React y Spring Boot, pero
-                                siempre estoy explorando nuevas herramientas. Creo firmemente en las
+                                Mi enfoque principal está en el ecosistema React y Node.js (Express),
+                                y también trabajo con Python (FastAPI) para servicios en tiempo real.
+                                Siempre estoy explorando nuevas herramientas y creo firmemente en las
                                 buenas prácticas: Clean Code, pruebas automatizadas y despliegue continuo.
                             </p>
                             <p>
