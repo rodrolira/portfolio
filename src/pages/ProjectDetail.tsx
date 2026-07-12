@@ -19,7 +19,7 @@ export const ProjectDetail = () => {
     return (
         <div className="min-h-screen pt-24 pb-16 bg-primary">
             <Helmet>
-                <title>{project.title} | Tu Nombre</title>
+                <title>{project.title} | Rodrigo Lira Pizarro</title>
                 <meta name="description" content={project.description} />
             </Helmet>
             <div className="max-w-4xl mx-auto px-4 sm:px-6">

@@ -13,8 +13,8 @@ export const Home = () => {
     return (
         <>
             <Helmet>
-                <title>Tu Nombre | Full Stack Developer</title>
-                <meta name="description" content="Portafolio profesional de Tu Nombre, desarrollador Full Stack." />
+                <title>Rodrigo Lira Pizarro | Full Stack Developer</title>
+                <meta name="description" content="Portafolio profesional de Rodrigo Lira Pizarro, desarrollador Full Stack." />
                 <meta property="og:title" content="Rodrigo Lira Pizarro | Full Stack Developer" />
                 {/* más tags... */}
             </Helmet>
