@@ -57,7 +57,7 @@ export const projects: Project[] = [
       'Modelar comportamiento emergente de una sociedad artificial y visualizarlo en tiempo real de forma comprensible.',
     architecture:
       'Núcleo ECS en Python (entidades, componentes, sistemas) con un servidor FastAPI que emite el estado por WebSocket; cliente React + PixiJS que renderiza el mundo en pixel art.',
-    liveDemoUrl: undefined,
+    liveDemoUrl: 'https://simulacion-vida.onrender.com/',
     githubUrl: 'https://github.com/rodrolira/simulacion-vida',
     learnings: [
       'Diseño de una arquitectura ECS escalable para simulación en tiempo real.',
