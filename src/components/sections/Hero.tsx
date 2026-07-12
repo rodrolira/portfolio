@@ -32,7 +32,7 @@ export const Hero = () => {
                     <div className="flex flex-wrap justify-center gap-3 mb-10">
                         <Badge text="React" color="cyan" />
                         <Badge text="TypeScript" color="blue" />
-                        <Badge text="Spring Boot" color="cyan" />
+                        <Badge text="Python" color="cyan" />
                         <Badge text="PostgreSQL" color="blue" />
                         <Badge text="Docker" color="cyan" />
                     </div>
