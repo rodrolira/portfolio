@@ -18,13 +18,23 @@ export const Certifications = () => {
                                 href={cert.url || '#'}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="block bg-primary/50 border border-white/10 rounded-xl p-5 hover:border-accent-cyan/50 transition-colors group"
+                                className="block bg-primary/50 border border-white/10 rounded-xl overflow-hidden hover:border-accent-cyan/50 transition-colors group"
                             >
-                                <h3 className="text-white font-semibold group-hover:text-accent-cyan transition-colors">
-                                    {cert.title}
-                                </h3>
-                                <p className="text-gray-400 text-sm mt-1">{cert.issuer}</p>
-                                <p className="text-gray-500 text-xs mt-2">{cert.date}</p>
+                                {cert.image && (
+                                    <img
+                                        src={cert.image}
+                                        alt={`Certificado: ${cert.title}`}
+                                        loading="lazy"
+                                        className="w-full aspect-4/3 object-cover border-b border-white/10 bg-white"
+                                    />
+                                )}
+                                <div className="p-5">
+                                    <h3 className="text-white font-semibold group-hover:text-accent-cyan transition-colors">
+                                        {cert.title}
+                                    </h3>
+                                    <p className="text-gray-400 text-sm mt-1">{cert.issuer}</p>
+                                    <p className="text-gray-500 text-xs mt-2">{cert.date}</p>
+                                </div>
                             </a>
                         ))}
                     </div>
